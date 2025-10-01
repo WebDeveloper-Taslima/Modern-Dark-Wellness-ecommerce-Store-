@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptide Apotheca | Precision Peptides for Elevated Wellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Design System */
+        :root {
+            --charcoal: #1a1a1a;
+            --soft-black: #0d0d0d;
+            --midnight: #0a1929;
+            --gold: #d4af37;
+            --gold-light: #e5c355;
+            --gold-dark: #b8941f;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-tertiary: #b0b0b0;
+            --card-bg: #1a1a1a;
+            --gradient-hero: linear-gradient(135deg, #0a1929 0%, #0d0d0d 100%);
+            --gradient-card: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+        }
+
+        body {
+            background-color: var(--soft-black);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.8rem; }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--soft-black);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--soft-black);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-hero);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.05;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: var(--gold);
+            color: var(--soft-black);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Product Bundles Section */
+        .bundles {
+            background-color: var(--charcoal);
+            position: relative;
+        }
+
+        .bundles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .bundle-card {
+            background: var(--gradient-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .bundle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .bundle-image {
+            height: 200px;
+            background-color: var(--midnight);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bundle-image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .bundle-content {
+            padding: 25px;
+        }
+
+        .bundle-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .bundle-description {
+            color: var(--text-tertiary);
+            margin-bottom: 15px;
+        }
+
+        .bundle-price {
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .bundle-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .bundle-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .bundle-features li i {
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--soft-black);
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .testimonial-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            min-width: 250px;
+            background: var(--gradient-card);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            scroll-snap-align: start;
+            position: relative;
+            border-top: 3px solid var(--gold);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--soft-black);
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        /* Product Detail Page */
+        .product-detail {
+            background: var(--gradient-hero);
+            padding: 150px 0 80px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .product-gallery {
+            position: relative;
+        }
+
+        .main-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            margin-top: 20px;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: var(--gold);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            background: var(--gradient-card);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-name {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-brand {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-brand::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin-left: 15px;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .product-options {
+            margin-bottom: 30px;
+        }
+
+        .option-group {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .option-select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--soft-black);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--soft-black);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--gold);
+            color: var(--soft-black);
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            margin: 0 15px;
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .product-tabs {
+            margin-top: 40px;
+        }
+
+        .tab-nav {
+            display: flex;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            color: var(--text-tertiary);
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--gold);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            background-color: rgba(212, 175, 55, 0.1);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 15px 20px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .hero-image {
+                max-width: 100%;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                order: 2;
+            }
+
+            .product-info {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.5rem; }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .bundles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .tab-nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">PEPTIDE APOTHECA</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Bundles</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Precision Peptides for Elevated Wellness</h1>
+                    <p class="hero-subtitle">Scientifically formulated bundles for recovery, longevity, and vitality</p>
+                    <a href="#" class="btn btn-primary">Explore Collections</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/00d55f3f-a376-486a-aedf-5a6376289c5e_9912f24c-a58f-48d9-86b9-6ecc4914d8c3.jpg?auth_key=1790858883-6b044e33de5e4475897539c4d471014f-0-04e84c7b57170ae3a3e337d7cd3deecd" alt="Peptide Apotheca Product Box" class="product-image">
+                    <div class="product-badge">NEW</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Bundles Section -->
+    <section class="bundles section">
+        <div class="container">
+            <h2 class="section-title">Curated Wellness Bundles</h2>
+            <div class="bundles-grid">
+                <!-- Bundle 1 -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://z-cdn-media.chatglm.cn/files/e5578491-a1c7-4b28-bee7-daa7bf7b66f4_219ba4fe-e2e7-4040-a9e8-ee6eeffc9682.jpg?auth_key=1790858883-7fd36f8ca3b1431e9e56ef94c79d1d46-0-cfced4c189038817c132072d6060c402" alt="BPC-157 Peptide">
+                    </div>
+                    <div class="bundle-content">
+                        <h3 class="bundle-title">Recovery & Repair</h3>
+                        <p class="bundle-description">Accelerate healing and reduce inflammation</p>
+                        <div class="bundle-price">$249</div>
+                        <ul class="bundle-features">
+                            <li><i class="fas fa-check-circle"></i> BPC-157 (5mg)</li>
+                            <li><i class="fas fa-check-circle"></i> TB-500 (5mg)</li>
+                            <li><i class="fas fa-check-circle"></i> 30-day supply</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Discover</a>
+                    </div>
+                </div>
+
+                <!-- Bundle 2 -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://anthony.com/cdn/shop/products/HPAnti-WrinkleGlycoliPeptideSerum1oz-2.jpg?v=1625003116" alt="Anti-Aging Peptide">
+                    </div>
+                    <div class="bundle-content">
+                        <h3 class="bundle-title">Longevity & Vitality</h3>
+                        <p class="bundle-description">Support cellular health and anti-aging</p>
+                        <div class="bundle-price">$299</div>
+                        <ul class="bundle-features">
+                            <li><i class="fas fa-check-circle"></i> Epitalon (5mg)</li>
+                            <li><i class="fas fa-check-circle"></i> Thymalin (5mg)</li>
+                            <li><i class="fas fa-check-circle"></i> 30-day supply</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Discover</a>
+                    </div>
+                </div>
+
+                <!-- Bundle 3 -->
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://z-cdn-media.chatglm.cn/files/00d55f3f-a376-486a-aedf-5a6376289c5e_9912f24c-a58f-48d9-86b9-6ecc4914d8c3.jpg?auth_key=1790858883-6b044e33de5e4475897539c4d471014f-0-04e84c7b57170ae3a3e337d7cd3deecd" alt="Performance Bundle">
+                    </div>
+                    <div class="bundle-content">
+                        <h3 class="bundle-title">Performance & Strength</h3>
+                        <p class="bundle-description">Enhance muscle growth and recovery</p>
+                        <div class="bundle-price">$349</div>
+                        <ul class="bundle-features">
+                            <li><i class="fas fa-check-circle"></i> IGF-1 LR3 (1mg)</li>
+                            <li><i class="fas fa-check-circle"></i> GHRP-6 (5mg)</li>
+                            <li><i class="fas fa-check-circle"></i> 30-day supply</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Discover</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">Client Experiences</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The Recovery & Repair bundle has significantly reduced my joint inflammation after workouts. I'm recovering faster than ever before."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MJ</div>
+                            <div class="author-info">
+                                <h4>Michael J.</h4>
+                                <p>Fitness Enthusiast</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I've been using the Longevity bundle for 3 months and my energy levels have improved dramatically. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SL</div>
+                            <div class="author-info">
+                                <h4>Sarah L.</h4>
+                                <p>Wellness Advocate</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"As a professional athlete, the Performance bundle has given me the edge I need. Recovery time is cut in half."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DR</div>
+                            <div class="author-info">
+                                <h4>David R.</h4>
+                                <p>Professional Athlete</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Page (Hidden by default) -->
+    <section class="product-detail section" style="display: none;">
+        <div class="container">
+            <div class="product-container">
+                <div class="product-gallery">
+                    <img src="https://z-cdn-media.chatglm.cn/files/e5578491-a1c7-4b28-bee7-daa7bf7b66f4_219ba4fe-e2e7-4040-a9e8-ee6eeffc9682.jpg?auth_key=1790858883-7fd36f8ca3b1431e9e56ef94c79d1d46-0-cfced4c189038817c132072d6060c402" alt="BPC-157 Peptide" class="main-image">
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail active">
+                            <img src="https://z-cdn-media.chatglm.cn/files/e5578491-a1c7-4b28-bee7-daa7bf7b66f4_219ba4fe-e2e7-4040-a9e8-ee6eeffc9682.jpg?auth_key=1790858883-7fd36f8ca3b1431e9e56ef94c79d1d46-0-cfced4c189038817c132072d6060c402" alt="BPC-157 Front">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://z-cdn-media.chatglm.cn/files/084a7a04-a5e7-43c8-a801-ed6af1a488f3_79a18463-97e7-4e1f-b4b4-8e093acddf3a.jpg?auth_key=1790858883-6de3c3b53db74563ab74f0162845893a-0-2def4c189038817c132072d6060c402" alt="BPC-157 Structure">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://z-cdn-media.chatglm.cn/files/00d55f3f-a376-486a-aedf-5a6376289c5e_9912f24c-a58f-48d9-86b9-6ecc4914d8c3.jpg?auth_key=1790858883-6b044e33de5e4475897539c4d471014f-0-04e84c7b57170ae3a3e337d7cd3deecd" alt="BPC-157 Box">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1 class="product-name">BPC-157</h1>
+                    <div class="product-brand">PEPTIDE APOTHECA</div>
+                    <div class="product-price">$149 <span style="font-size: 1rem; color: var(--text-tertiary); text-decoration: line-through;">$189</span></div>
+                    <p class="product-description">BPC-157 is a synthetic peptide that has been shown to accelerate healing and reduce inflammation throughout the body. It promotes tissue repair and has protective effects on various organs.</p>
+                    
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">Dosage</label>
+                            <select class="option-select">
+                                <option>5mg vial</option>
+                                <option>10mg vial (+$50)</option>
+                                <option>15mg vial (+$90)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <div class="quantity-btn">-</div>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <div class="quantity-btn">+</div>
+                    </div>
+
+                    <div class="product-actions">
+                        <a href="#" class="btn btn-primary">Add to Ritual</a>
+                        <a href="#" class="btn btn-outline">Subscribe & Save 15%</a>
+                    </div>
+
+                    <div class="product-tabs">
+                        <div class="tab-nav">
+                            <button class="tab-btn active" data-tab="description">Description</button>
+                            <button class="tab-btn" data-tab="science">Science</button>
+                            <button class="tab-btn" data-tab="usage">Usage</button>
+                            <button class="tab-btn" data-tab="faq">FAQ</button>
+                        </div>
+
+                        <div class="tab-content active" id="description">
+                            <p>BPC-157 is a peptide chain consisting of 15 amino acids. It is derived from a protective protein found in the stomach. Research has shown that BPC-157 has remarkable healing properties throughout the body, including tendons, muscles, nervous system, and digestive tract.</p>
+                            <p>This peptide works by enhancing the body's natural healing processes and reducing inflammation. It has been studied for its potential to accelerate wound healing, protect organs, and improve joint health.</p>
+                        </div>
+
+                        <div class="tab-content" id="science">
+                            <p>BPC-157 promotes angiogenesis (formation of new blood vessels) and increases the expression of growth factor receptors. It has been shown to:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Accelerate tendon-to-bone healing</li>
+                                <li>Protect against gastric ulcers</li>
+                                <li>Reduce inflammation in joints</li>
+                                <li>Promote nerve regeneration</li>
+                                <li>Protect the liver from toxic damage</li>
+                            </ul>
+                            <p style="margin-top: 15px;">Research indicates that BPC-157 works through multiple pathways, including modulation of growth factors and nitric oxide production.</p>
+                        </div>
+
+                        <div class="tab-content" id="usage">
+                            <p><strong>Recommended Dosage:</strong> 250-500mcg per day</p>
+                            <p><strong>Administration:</strong> Subcutaneous injection</p>
+                            <p><strong>Duration:</strong> 4-6 weeks for optimal results</p>
+                            <p><strong>Reconstitution:</strong> Mix with bacteriostatic water as directed</p>
+                            <p style="margin-top: 15px;"><strong>Important:</strong> This product is for research purposes only. Consult with a healthcare professional before use.</p>
+                        </div>
+
+                        <div class="tab-content" id="faq">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span>How should I store BPC-157?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Store the lyophilized powder in a cool, dry place away from light. After reconstitution, keep refrigerated and use within 30 days.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span>Are there any side effects?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>BPC-157 is generally well-tolerated. Some users may experience mild injection site reactions. As with any peptide, follow recommended dosages.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span>How long until I see results?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Many users report noticeable improvements within 2-3 weeks of consistent use, with optimal results appearing after 4-6 weeks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Peptide Apotheca</h3>
+                    <p>Precision peptides for elevated wellness and longevity. Science-backed formulations for the discerning individual.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Bundles</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@peptideapotheca.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Peptide Apotheca || Developed By WebDevTaslima || All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality for product detail page
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    btn.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // FAQ accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Toggle active class on clicked item
+                    item.classList.toggle('active');
+                    
+                    // Close other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Quantity selector functionality
+            const quantityBtns = document.querySelectorAll('.quantity-btn');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            quantityBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const currentValue = parseInt(quantityInput.value);
+                    
+                    if (btn.textContent === '+') {
+                        quantityInput.value = currentValue + 1;
+                    } else if (btn.textContent === '-' && currentValue > 1) {
+                        quantityInput.value = currentValue - 1;
+                    }
+                });
+            });
+            
+            // Thumbnail gallery functionality
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.querySelector('.main-image');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked thumbnail
+                    thumbnail.classList.add('active');
+                    
+                    // Change main image source
+                    const imgSrc = thumbnail.querySelector('img').getAttribute('src');
+                    mainImage.setAttribute('src', imgSrc);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
